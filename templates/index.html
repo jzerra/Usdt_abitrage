@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>USDT Arbitrage Checker</title>
+</head>
+<body>
+    <h1>USDT Arbitrage Rates</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <ul>
+            {% for name, rate in platforms.items() %}
+                <li><strong>{{ name }}:</strong> ₦{{ rate }}</li>
+            {% endfor %}
+        </ul>
+        <h3>Best Opportunity:</h3>
+        <p>Buy from <strong>{{ buy_from }}</strong> and sell to <strong>{{ sell_to }}</strong></p>
+        <p>Profit per USDT: <strong>₦{{ profit }}</strong></p>
+    {% endif %}
+</body>
+</html>
